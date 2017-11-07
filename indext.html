@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title> Formulario</title>
+	<link rel="stylesheet" href="css/reset.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<link href="https://fonts.googleapis.com/css?family=Knewave" rel="stylesheet">
+
+ <style type="text/css" >
+        #boton label.error {
+        margin: 0 auto;
+        color: #f1532e;
+        font-size: 15px;
+        font-family: Helvetica, sans-serif;
+        text-transform: lowercase;
+        position: relative;
+        align-content: center;
+        
+              }
+
+     </style>
+
+</head>
+<header>
+  <a href="https://www.facebook.com/BocaoRD/" target="blank"><img height="35" width="35" src="images/fb.png"></a>
+  <a href="https://twitter.com/bocaord" target="blank"><img height="35" width="35" src="images/tw.png"></a>
+  <a href="https://www.instagram.com/bocao/" target="blank"><img height="35" width="35" src="images/ig.png"></a>
+
+
+<body>
+
+	<div class="contenedor">
+
+	<header>
+		<img height="468" width="468" src="images/logo.png">
+
+		<h1>Participa y Gana</h1>
+		<h2>  </h2>
+
+	</header>
+
+
+
+ <form id="boton">
+  <label>Nombre:</label><br>
+  <input class="cuadro" type="text" name="name" placeholder="¿Cuál es tu nombre?">
+  <br> <br>
+  <label>Apellido:</label><br>
+  <input class="cuadro" type="text" name="lastname" placeholder="¿Cuál es tu apellido?">
+  <br> <br>
+  <label>Correo Electrónico:</label><br>
+<input class="cuadro" type="text" name="email" placeholder="ejemplo@ejemplo.com">
+<br> <br>
+ <label>Tel&eacute;fono</label><br>
+    <input name="phone" type="text" id="phone_number" placeholder="Dame tu bibi pin">
+
+  <br> <br>
+
+  <label>Ciudad:</label><br>
+<input class="cuadro" type="text" name="city" placeholder="¿En qué ciudad vives?">
+<br> <br>
+  <label>País de Residencia:</label><br>
+<input class="cuadro" type="text" name="residencia" placeholder="¿De qué país eres?">
+<br> <br>
+  <label>Mensaje:</label><br>
+<textarea class="cuadro" name="message" id="" cols="30" rows="10" placeholder="¿Qué esperas de bocao food fest?"></textarea>
+<br> <br>
+  <br>
+  <button form="boton" type="submit" class="send">¡YA!</button>
+</form>
+
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+<script>
+$().ready(function() {
+  
+  $("#boton").validate({
+    rules: {
+      name: "required",
+      lastname: "required",
+      message: "required",
+      city: "required",
+      residencia: "required",
+      phone: "required",
+
+      activity: {
+        required: true
+      },
+      email: {
+      required: true,
+      email: true
+      },
+    },
+    messages: {
+
+      name: "<br />*Por favor introduzca su nombre",
+      lastname: "<br />*Por favor introduzca su apellido",
+      city: "<br />*Por favor introduzca la ciudad de residencia",
+      residencia: "<br />*Por favor introduzca el país de residencia",
+     
+      phone: "<br />*Por favor introduzca su n&uacute;mero de tel&eacute;fono",
+      message: "<br />*Este campo es obligatorio",
+      activity: {
+        required: "<br />*Por favor selecciona una actividad"
+      },
+      email: {
+        required: "<br />*Por favor introduzca su e-mail",
+        email: "<br />*Por favor introduzca un e-mail válido"
+      },
+    }
+  });
+});
+
+jQuery(function($){
+   $("#phone_number").mask("(999) 999-9999");
+});
+
+
+</script>
+</body>
+
+</html>
